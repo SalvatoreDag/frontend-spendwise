@@ -8,7 +8,7 @@ const api = axios.create({
 
 //call to get user data
 export const getUser = (data) => {
-  return axios.get('/user', {
+  return api.get('/user', {
     headers: {
       Authorization: `Bearer ${data.token}`
     }
@@ -17,17 +17,17 @@ export const getUser = (data) => {
 
 //call to login
 export const login = (credentials) => {
-  return axios.post("/login", credentials);
+  return api.post("/login", credentials);
 };
 
 //call to registration
 export const registration = (credentials) => {
-  return axios.post("/register", credentials);
+  return api.post("/register", credentials);
 };
 
 //call to logout
 export const logout = (userData) => {
-  return axios.post("/logout", userData, {
+  return api.post("/logout", userData, {
     headers: {
       Authorization: `Bearer ${userData}`,
     },
@@ -36,7 +36,7 @@ export const logout = (userData) => {
 
 //call to get expenses
 export const expensesByMonth = (data) => {
-  return axios.get("/expenses", {
+  return api.get("/expenses", {
     headers: {
       Authorization: `Bearer ${data.accessToken}`,
     },
@@ -49,7 +49,7 @@ export const expensesByMonth = (data) => {
 //call to delete an expense
 export const destroyExpenses = async (data) => {
   const id = data.id;
-  return axios.delete(`/expenses/${id}`, {
+  return api.delete(`/expenses/${id}`, {
     headers: {
       Authorization: `Bearer ${data.accessToken}`,
     },
@@ -60,7 +60,7 @@ export const destroyExpenses = async (data) => {
 export const updateExpenses =  (data) => {
   const { id, accessToken, ...rest } = data;
 
-   return axios.put(`/expenses/${id}`, rest, {
+   return api.put(`/expenses/${id}`, rest, {
      headers: {
        Authorization: `Bearer ${accessToken}`,
      },
@@ -72,7 +72,7 @@ export const storeExpenses = (data) => {
 
   const { accessToken, ...rest } = data;
 
-  return axios.post("/expenses/", rest, {
+  return api.post("/expenses/", rest, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
