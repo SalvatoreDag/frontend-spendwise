@@ -17,7 +17,7 @@ export const getUser = (data) => {
 
 //call to login
 export const login = (credentials) => {
-  return axios.post("/login", credentials);
+  return api.post("/login", credentials);
 };
 
 //call to registration
