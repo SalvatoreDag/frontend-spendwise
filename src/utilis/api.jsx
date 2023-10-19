@@ -3,7 +3,7 @@ import axios from "axios";
 ////component that contains all the api
 
 const api = axios.create({
-  baseURL: "/api",
+  baseURL: "https://expense-api.000webhostapp.com/api",
 });
 
 //call to get user data
