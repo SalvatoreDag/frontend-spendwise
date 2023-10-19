@@ -2,7 +2,6 @@
   "name": "progetto-finale-fullstack",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://expense-api.000webhostapp.com",
   "dependencies": {
     "@tanstack/react-query": "^4.29.12",
     "@tanstack/react-query-devtools": "^4.32.0",
