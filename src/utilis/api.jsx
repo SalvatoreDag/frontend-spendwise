@@ -16,8 +16,16 @@ export const getUser = (data) => {
 }
 
 //call to login
+// export const login = (credentials) => {
+//   return api.post("/login", credentials);
+  
+// };
 export const login = (credentials) => {
-  return api.post("/login", credentials);
+  return api.post("/login", credentials, {
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  });
 };
 
 //call to registration
